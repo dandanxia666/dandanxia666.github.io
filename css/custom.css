@@ -80,12 +80,25 @@ body {
       rgba(201, 168, 130, 0.02) 81px
     ),
     /* 基础渐变 */
-    linear-gradient(180deg, #fdf8f3 0%, #f5f0e8 100%);
+    linear-gradient(180deg, #fdf8f3 0%, #f5f0e8 100%) !important;
   background-attachment: fixed !important;
 }
 
-/* Hero 装饰层 */
+/* 覆盖蝴蝶主题的 mask 遮罩层 */
 #page-header.full_page::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  /* 透明遮罩，让背景渐变显示出来 */
+  background: transparent !important;
+  z-index: 0;
+}
+
+/* Hero 装饰层 */
+#page-header.full_page::after {
   content: "";
   position: absolute;
   top: -20%;
@@ -98,20 +111,6 @@ body {
   pointer-events: none;
   z-index: 0;
   animation: heroGlow 10s ease-in-out infinite alternate;
-}
-
-#page-header.full_page::after {
-  content: "";
-  position: absolute;
-  bottom: -15%;
-  left: 15%;
-  width: 45%;
-  height: 65%;
-  background: radial-gradient(ellipse, rgba(201, 168, 130, 0.1) 0%, transparent 70%);
-  filter: blur(50px);
-  pointer-events: none;
-  z-index: 0;
-  animation: heroGlow 12s ease-in-out infinite alternate-reverse;
 }
 
 @keyframes heroGlow {
@@ -127,25 +126,26 @@ body {
 
 /* Hero 标题 */
 #page-header.full_page #site-title {
-  font-family: var(--font-serif);
-  font-weight: 700;
-  font-size: 3rem;
-  background: linear-gradient(135deg, var(--text-primary) 0%, var(--accent) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  margin-bottom: 0.5em;
+  font-family: var(--font-serif) !important;
+  font-weight: 700 !important;
+  font-size: 3rem !important;
+  background: linear-gradient(135deg, var(--text-primary) 0%, var(--accent) 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+  margin-bottom: 0.5em !important;
   text-shadow: none !important;
+  color: var(--text-primary) !important;
 }
 
 /* 副标题 */
 #page-header.full_page #site-subtitle {
   color: var(--text-secondary) !important;
   font-size: 1.2rem !important;
-  line-height: 1.8;
+  line-height: 1.8 !important;
   max-width: 540px;
-  margin: 0 auto;
-  opacity: 0.9;
+  margin: 0 auto !important;
+  opacity: 0.9 !important;
   text-shadow: none !important;
 }
 
