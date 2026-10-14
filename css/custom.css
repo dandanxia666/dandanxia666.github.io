@@ -60,7 +60,8 @@ body {
 
 /* ========== 首页 Hero 区域 (Butterfly 主题) ========== */
 /* 覆盖蝴蝶主题的 full_page 背景 - 重新设计更有层次 */
-#page-header.full_page {
+#page-header.full_page,
+#page-header.not-top-img {
   position: relative;
   overflow: hidden;
   background:
@@ -80,7 +81,8 @@ body {
 }
 
 /* 覆盖蝴蝶主题的 mask 遮罩层 */
-#page-header.full_page::before {
+#page-header.full_page,
+#page-header.not-top-img::before {
   content: "";
   position: absolute;
   top: 0;
@@ -92,7 +94,8 @@ body {
 }
 
 /* Hero 装饰层 - 多个光斑营造深度 - 更明显 */
-#page-header.full_page::after {
+#page-header.full_page,
+#page-header.not-top-img::after {
   content: "";
   position: absolute;
   top: -40%;
@@ -130,7 +133,8 @@ body {
 }
 
 /* Hero 纹理叠加 - 更明显的网格纹理 */
-#page-header.full_page .hero-texture {
+#page-header.full_page,
+#page-header.not-top-img .hero-texture {
   content: "";
   position: absolute;
   top: 0;
@@ -164,7 +168,8 @@ body {
 }
 
 /* Hero 标题 - 更醒目 */
-#page-header.full_page #site-title {
+#page-header.full_page,
+#page-header.not-top-img #site-title {
   font-family: var(--font-serif) !important;
   font-weight: 800 !important;
   font-size: 4.2rem !important;
@@ -180,7 +185,8 @@ body {
 }
 
 /* 副标题 - 添加描述文字 */
-#page-header.full_page #site-subtitle {
+#page-header.full_page,
+#page-header.not-top-img #site-subtitle {
   color: var(--text-secondary) !important;
   font-size: 1.2rem !important;
   line-height: 1.9 !important;
@@ -192,7 +198,8 @@ body {
 }
 
 /* 社交图标 */
-#page-header.full_page #site_social_icons .social-icon {
+#page-header.full_page,
+#page-header.not-top-img #site_social_icons .social-icon {
   color: var(--text-tertiary) !important;
   text-shadow: none !important;
   transition: all 0.3s ease;
@@ -200,13 +207,15 @@ body {
   margin: 0 0.7em;
 }
 
-#page-header.full_page #site_social_icons .social-icon:hover {
+#page-header.full_page,
+#page-header.not-top-img #site_social_icons .social-icon:hover {
   color: var(--accent) !important;
   transform: translateY(-4px) scale(1.2);
 }
 
 /* 向下滚动箭头 */
-#page-header.full_page #scroll-down .scroll-down-effects {
+#page-header.full_page,
+#page-header.not-top-img #scroll-down .scroll-down-effects {
   color: var(--text-tertiary) !important;
   text-shadow: none !important;
   font-size: 32px !important;
@@ -220,7 +229,8 @@ body {
 
 /* ========== 新增：Hero 装饰元素 ========== */
 /* 左侧装饰 - 小圆点 - 更大 */
-#page-header.full_page .hero-deco-left {
+#page-header.full_page,
+#page-header.not-top-img .hero-deco-left {
   position: absolute;
   left: 3%;
   top: 25%;
@@ -233,7 +243,8 @@ body {
 }
 
 /* 右侧装饰 - 小圆点 - 更大 */
-#page-header.full_page .hero-deco-right {
+#page-header.full_page,
+#page-header.not-top-img .hero-deco-right {
   position: absolute;
   right: 5%;
   top: 20%;
@@ -246,7 +257,8 @@ body {
 }
 
 /* 底部装饰 - 波浪线 - 更明显 */
-#page-header.full_page .hero-deco-bottom {
+#page-header.full_page,
+#page-header.not-top-img .hero-deco-bottom {
   position: absolute;
   bottom: 10%;
   left: 50%;
@@ -270,7 +282,8 @@ body {
 
 /* ========== 新增：更多装饰元素 ========== */
 /* 左上角装饰 - 小圆圈 */
-#page-header.full_page .hero-deco-tl {
+#page-header.full_page,
+#page-header.not-top-img .hero-deco-tl {
   position: absolute;
   top: 8%;
   left: 12%;
@@ -283,7 +296,8 @@ body {
 }
 
 /* 右下角装饰 - 小圆圈 */
-#page-header.full_page .hero-deco-br {
+#page-header.full_page,
+#page-header.not-top-img .hero-deco-br {
   position: absolute;
   bottom: 18%;
   right: 15%;
@@ -296,7 +310,8 @@ body {
 }
 
 /* 中间装饰 - 小点 */
-#page-header.full_page .hero-deco-center {
+#page-header.full_page,
+#page-header.not-top-img .hero-deco-center {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -311,7 +326,8 @@ body {
 
 /* ========== 新增：背景图案层 ========== */
 /* 大型装饰圆环 - 左侧 */
-#page-header.full_page .hero-deco-ring-left {
+#page-header.full_page,
+#page-header.not-top-img .hero-deco-ring-left {
   position: absolute;
   left: -5%;
   top: 30%;
@@ -324,7 +340,8 @@ body {
 }
 
 /* 大型装饰圆环 - 右侧 */
-#page-header.full_page .hero-deco-ring-right {
+#page-header.full_page,
+#page-header.not-top-img .hero-deco-ring-right {
   position: absolute;
   right: -8%;
   bottom: 25%;
@@ -337,7 +354,8 @@ body {
 }
 
 /* 装饰性波浪线 - 顶部 */
-#page-header.full_page .hero-deco-wave-top {
+#page-header.full_page,
+#page-header.not-top-img .hero-deco-wave-top {
   position: absolute;
   top: 15%;
   left: 20%;
@@ -349,7 +367,8 @@ body {
 }
 
 /* 装饰性波浪线 - 底部 */
-#page-header.full_page .hero-deco-wave-bottom {
+#page-header.full_page,
+#page-header.not-top-img .hero-deco-wave-bottom {
   position: absolute;
   bottom: 25%;
   right: 25%;
@@ -375,63 +394,6 @@ body {
   50% { transform: translateX(-40px); opacity: 0.7; }
 }
 
-/* Hero 内容层级 */
-#page-header.full_page #site-info {
-  position: relative;
-  z-index: 1;
-}
-
-/* Hero 标题 */
-#page-header.full_page #site-title {
-  font-family: var(--font-serif) !important;
-  font-weight: 700 !important;
-  font-size: 3.2rem !important;
-  background: linear-gradient(135deg, #4a3f35 0%, #8c7f74 40%, #c9a882 100%) !important;
-  -webkit-background-clip: text !important;
-  -webkit-text-fill-color: transparent !important;
-  background-clip: text !important;
-  margin-bottom: 0.6em !important;
-  text-shadow: none !important;
-  color: var(--text-primary) !important;
-  letter-spacing: 0.05em;
-}
-
-/* 副标题 */
-#page-header.full_page #site-subtitle {
-  color: var(--text-secondary) !important;
-  font-size: 1.15rem !important;
-  line-height: 1.8 !important;
-  max-width: 500px;
-  margin: 0 auto !important;
-  opacity: 0.85 !important;
-  text-shadow: none !important;
-}
-
-/* 社交图标 */
-#page-header.full_page #site_social_icons .social-icon {
-  color: var(--text-tertiary) !important;
-  text-shadow: none !important;
-  transition: all 0.3s ease;
-  font-size: 1.5em;
-}
-
-#page-header.full_page #site_social_icons .social-icon:hover {
-  color: var(--accent) !important;
-  transform: translateY(-2px);
-}
-
-/* 向下滚动箭头 */
-#page-header.full_page #scroll-down .scroll-down-effects {
-  color: var(--text-tertiary) !important;
-  text-shadow: none !important;
-  font-size: 24px !important;
-  animation: bounce 2s ease-in-out infinite;
-}
-
-@keyframes bounce {
-  0%, 100% { transform: translateY(0); opacity: 0.6; }
-  50% { transform: translateY(10px); opacity: 1; }
-}
 
 /* ========== 导航栏 ========== */
 #page-header {
