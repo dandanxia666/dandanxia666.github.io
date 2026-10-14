@@ -63,24 +63,19 @@ body {
 #page-header.full_page {
   position: relative;
   overflow: hidden;
-  /* 用多层渐变覆盖内联的背景图片 */
-  background: 
-    /* 大号柔光球 1 */
-    radial-gradient(circle at 30% 30%, rgba(232, 213, 192, 0.4) 0%, transparent 50%),
-    /* 大号柔光球 2 */
-    radial-gradient(circle at 70% 60%, rgba(212, 184, 150, 0.25) 0%, transparent 45%),
-    /* 小号高光 */
-    radial-gradient(circle at 55% 20%, rgba(255, 245, 236, 0.5) 0%, transparent 35%),
-    /* 微妙的纹理叠加 */
-    repeating-linear-gradient(
-      45deg,
-      transparent,
-      transparent 80px,
-      rgba(201, 168, 130, 0.02) 80px,
-      rgba(201, 168, 130, 0.02) 81px
-    ),
-    /* 基础渐变 */
-    linear-gradient(180deg, #fdf8f3 0%, #f5f0e8 100%) !important;
+  background:
+    /* 左侧暖光晕 */
+    radial-gradient(ellipse 60% 80% at 15% 40%, rgba(232, 213, 192, 0.5) 0%, transparent 70%),
+    /* 右侧柔光 */
+    radial-gradient(ellipse 50% 70% at 85% 30%, rgba(212, 184, 150, 0.35) 0%, transparent 65%),
+    /* 顶部高光 */
+    radial-gradient(ellipse 80% 30% at 50% 0%, rgba(255, 248, 240, 0.6) 0%, transparent 60%),
+    /* 底部暖色 */
+    radial-gradient(ellipse 70% 50% at 50% 100%, rgba(201, 168, 130, 0.15) 0%, transparent 60%),
+    /* 中心微光 */
+    radial-gradient(circle at 50% 50%, rgba(255, 250, 245, 0.3) 0%, transparent 50%),
+    /* 基础底色 */
+    linear-gradient(170deg, #fdf8f3 0%, #f7f0e6 50%, #f5ede2 100%);
   background-attachment: fixed !important;
 }
 
@@ -92,30 +87,36 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  /* 透明遮罩，让背景渐变显示出来 */
   background: transparent !important;
   z-index: 0;
 }
 
-/* Hero 装饰层 */
+/* Hero 装饰层 - 漂浮光斑 */
 #page-header.full_page::after {
   content: "";
   position: absolute;
-  top: -20%;
-  left: -10%;
-  right: -10%;
-  bottom: -20%;
+  top: -10%;
+  left: -5%;
+  right: -5%;
+  bottom: -10%;
   background:
-    radial-gradient(circle at 25% 40%, rgba(201, 168, 130, 0.12) 0%, transparent 50%),
-    radial-gradient(circle at 75% 30%, rgba(232, 213, 192, 0.15) 0%, transparent 45%);
+    /* 光斑 1 */
+    radial-gradient(circle at 20% 35%, rgba(201, 168, 130, 0.18) 0%, transparent 30%),
+    /* 光斑 2 */
+    radial-gradient(circle at 75% 25%, rgba(232, 213, 192, 0.22) 0%, transparent 28%),
+    /* 光斑 3 */
+    radial-gradient(circle at 45% 70%, rgba(212, 184, 150, 0.12) 0%, transparent 35%),
+    /* 光斑 4 */
+    radial-gradient(circle at 80% 75%, rgba(201, 168, 130, 0.08) 0%, transparent 25%);
   pointer-events: none;
   z-index: 0;
-  animation: heroGlow 10s ease-in-out infinite alternate;
+  animation: heroGlow 12s ease-in-out infinite alternate;
 }
 
 @keyframes heroGlow {
-  0% { opacity: 0.7; transform: translateX(0) scale(1); }
-  100% { opacity: 1; transform: translateX(30px) scale(1.05); }
+  0% { opacity: 0.8; transform: scale(1) translate(0, 0); }
+  50% { opacity: 1; transform: scale(1.02) translate(10px, -5px); }
+  100% { opacity: 0.9; transform: scale(1.01) translate(-5px, 5px); }
 }
 
 /* Hero 内容层级 */
@@ -128,48 +129,52 @@ body {
 #page-header.full_page #site-title {
   font-family: var(--font-serif) !important;
   font-weight: 700 !important;
-  font-size: 3rem !important;
-  background: linear-gradient(135deg, var(--text-primary) 0%, var(--accent) 100%) !important;
+  font-size: 3.2rem !important;
+  background: linear-gradient(135deg, #4a3f35 0%, #8c7f74 40%, #c9a882 100%) !important;
   -webkit-background-clip: text !important;
   -webkit-text-fill-color: transparent !important;
   background-clip: text !important;
-  margin-bottom: 0.5em !important;
+  margin-bottom: 0.6em !important;
   text-shadow: none !important;
   color: var(--text-primary) !important;
+  letter-spacing: 0.05em;
 }
 
 /* 副标题 */
 #page-header.full_page #site-subtitle {
   color: var(--text-secondary) !important;
-  font-size: 1.2rem !important;
+  font-size: 1.15rem !important;
   line-height: 1.8 !important;
-  max-width: 540px;
+  max-width: 500px;
   margin: 0 auto !important;
-  opacity: 0.9 !important;
+  opacity: 0.85 !important;
   text-shadow: none !important;
 }
 
 /* 社交图标 */
 #page-header.full_page #site_social_icons .social-icon {
-  color: var(--text-secondary) !important;
+  color: var(--text-tertiary) !important;
   text-shadow: none !important;
-  transition: color 0.3s ease;
+  transition: all 0.3s ease;
+  font-size: 1.5em;
 }
 
 #page-header.full_page #site_social_icons .social-icon:hover {
   color: var(--accent) !important;
+  transform: translateY(-2px);
 }
 
 /* 向下滚动箭头 */
 #page-header.full_page #scroll-down .scroll-down-effects {
   color: var(--text-tertiary) !important;
   text-shadow: none !important;
+  font-size: 24px !important;
   animation: bounce 2s ease-in-out infinite;
 }
 
 @keyframes bounce {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(8px); }
+  0%, 100% { transform: translateY(0); opacity: 0.6; }
+  50% { transform: translateY(10px); opacity: 1; }
 }
 
 /* ========== 导航栏 ========== */
