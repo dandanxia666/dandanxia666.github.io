@@ -268,6 +268,47 @@ body {
   50% { opacity: 0.8; width: 320px; }
 }
 
+/* ========== 新增：更多装饰元素 ========== */
+/* 左上角装饰 - 小圆圈 */
+#page-header.full_page .hero-deco-tl {
+  position: absolute;
+  top: 8%;
+  left: 12%;
+  width: 40px;
+  height: 40px;
+  border: 2px solid rgba(201, 168, 130, 0.3);
+  border-radius: 50%;
+  animation: float 6s ease-in-out infinite;
+  z-index: 0;
+}
+
+/* 右下角装饰 - 小圆圈 */
+#page-header.full_page .hero-deco-br {
+  position: absolute;
+  bottom: 18%;
+  right: 15%;
+  width: 50px;
+  height: 50px;
+  border: 2px solid rgba(232, 213, 192, 0.4);
+  border-radius: 50%;
+  animation: float 7s ease-in-out infinite reverse;
+  z-index: 0;
+}
+
+/* 中间装饰 - 小点 */
+#page-header.full_page .hero-deco-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 8px;
+  height: 8px;
+  background: rgba(201, 168, 130, 0.3);
+  border-radius: 50%;
+  animation: pulse 3s ease-in-out infinite;
+  z-index: 0;
+}
+
 /* Hero 内容层级 */
 #page-header.full_page #site-info {
   position: relative;
