@@ -210,6 +210,56 @@ body {
   50% { transform: translateY(12px); opacity: 1; }
 }
 
+/* ========== 新增：Hero 装饰元素 ========== */
+/* 左侧装饰 - 小圆点 */
+#page-header.full_page .hero-deco-left {
+  position: absolute;
+  left: 5%;
+  top: 30%;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(201, 168, 130, 0.2) 0%, transparent 70%);
+  animation: float 8s ease-in-out infinite;
+  z-index: 0;
+}
+
+/* 右侧装饰 - 小圆点 */
+#page-header.full_page .hero-deco-right {
+  position: absolute;
+  right: 8%;
+  top: 25%;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(232, 213, 192, 0.3) 0%, transparent 70%);
+  animation: float 10s ease-in-out infinite reverse;
+  z-index: 0;
+}
+
+/* 底部装饰 - 波浪线 */
+#page-header.full_page .hero-deco-bottom {
+  position: absolute;
+  bottom: 15%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 200px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(201, 168, 130, 0.3), transparent);
+  animation: pulse 4s ease-in-out infinite;
+  z-index: 0;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(5deg); }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.3; width: 200px; }
+  50% { opacity: 0.6; width: 250px; }
+}
+
 /* Hero 内容层级 */
 #page-header.full_page #site-info {
   position: relative;
