@@ -309,6 +309,72 @@ body {
   z-index: 0;
 }
 
+/* ========== 新增：背景图案层 ========== */
+/* 大型装饰圆环 - 左侧 */
+#page-header.full_page .hero-deco-ring-left {
+  position: absolute;
+  left: -5%;
+  top: 30%;
+  width: 200px;
+  height: 200px;
+  border: 3px solid rgba(201, 168, 130, 0.15);
+  border-radius: 50%;
+  animation: rotate 20s linear infinite;
+  z-index: 0;
+}
+
+/* 大型装饰圆环 - 右侧 */
+#page-header.full_page .hero-deco-ring-right {
+  position: absolute;
+  right: -8%;
+  bottom: 25%;
+  width: 250px;
+  height: 250px;
+  border: 3px solid rgba(232, 213, 192, 0.2);
+  border-radius: 50%;
+  animation: rotate 25s linear infinite reverse;
+  z-index: 0;
+}
+
+/* 装饰性波浪线 - 顶部 */
+#page-header.full_page .hero-deco-wave-top {
+  position: absolute;
+  top: 15%;
+  left: 20%;
+  width: 150px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(201, 168, 130, 0.3), transparent);
+  animation: slideRight 8s ease-in-out infinite;
+  z-index: 0;
+}
+
+/* 装饰性波浪线 - 底部 */
+#page-header.full_page .hero-deco-wave-bottom {
+  position: absolute;
+  bottom: 25%;
+  right: 25%;
+  width: 180px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(232, 213, 192, 0.35), transparent);
+  animation: slideLeft 10s ease-in-out infinite;
+  z-index: 0;
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes slideRight {
+  0%, 100% { transform: translateX(0); opacity: 0.3; }
+  50% { transform: translateX(30px); opacity: 0.6; }
+}
+
+@keyframes slideLeft {
+  0%, 100% { transform: translateX(0); opacity: 0.4; }
+  50% { transform: translateX(-40px); opacity: 0.7; }
+}
+
 /* Hero 内容层级 */
 #page-header.full_page #site-info {
   position: relative;
