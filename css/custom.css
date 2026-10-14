@@ -59,21 +59,21 @@ body {
 }
 
 /* ========== 首页 Hero 区域 (Butterfly 主题) ========== */
-/* 覆盖蝴蝶主题的 full_page 背景 */
+/* 覆盖蝴蝶主题的 full_page 背景 - 增强层次感 */
 #page-header.full_page {
   position: relative;
   overflow: hidden;
   background:
     /* 左侧暖光晕 - 更明显 */
-    radial-gradient(ellipse 70% 90% at 10% 45%, rgba(232, 213, 192, 0.7) 0%, transparent 60%),
+    radial-gradient(ellipse 75% 95% at 8% 45%, rgba(232, 213, 192, 0.85) 0%, transparent 55%),
     /* 右侧柔光 - 更明显 */
-    radial-gradient(ellipse 60% 80% at 90% 35%, rgba(212, 184, 150, 0.55) 0%, transparent 55%),
+    radial-gradient(ellipse 65% 85% at 92% 35%, rgba(212, 184, 150, 0.7) 0%, transparent 50%),
     /* 顶部高光 */
-    radial-gradient(ellipse 90% 40% at 50% 0%, rgba(255, 248, 240, 0.8) 0%, transparent 50%),
+    radial-gradient(ellipse 95% 45% at 50% 0%, rgba(255, 248, 240, 0.9) 0%, transparent 45%),
     /* 底部暖色 */
-    radial-gradient(ellipse 80% 60% at 50% 100%, rgba(201, 168, 130, 0.35) 0%, transparent 50%),
+    radial-gradient(ellipse 85% 65% at 50% 100%, rgba(201, 168, 130, 0.45) 0%, transparent 45%),
     /* 中心微光 */
-    radial-gradient(circle at 50% 50%, rgba(255, 250, 245, 0.5) 0%, transparent 40%),
+    radial-gradient(circle at 50% 50%, rgba(255, 250, 245, 0.6) 0%, transparent 35%),
     /* 基础底色 */
     linear-gradient(170deg, #fdf8f3 0%, #f7f0e6 50%, #f5ede2 100%);
   background-attachment: fixed !important;
@@ -95,31 +95,33 @@ body {
 #page-header.full_page::after {
   content: "";
   position: absolute;
-  top: -20%;
-  left: -15%;
-  right: -15%;
-  bottom: -20%;
+  top: -25%;
+  left: -20%;
+  right: -20%;
+  bottom: -25%;
   background:
-    /* 光斑 1 - 左上暖光 */
-    radial-gradient(circle at 15% 25%, rgba(201, 168, 130, 0.35) 0%, transparent 22%),
-    /* 光斑 2 - 右上柔光 */
-    radial-gradient(circle at 82% 18%, rgba(232, 213, 192, 0.4) 0%, transparent 20%),
+    /* 光斑 1 - 左上暖光 - 更大更亮 */
+    radial-gradient(circle at 12% 22%, rgba(201, 168, 130, 0.45) 0%, transparent 20%),
+    /* 光斑 2 - 右上柔光 - 更大更亮 */
+    radial-gradient(circle at 85% 15%, rgba(232, 213, 192, 0.55) 0%, transparent 18%),
     /* 光斑 3 - 中下暖色 */
-    radial-gradient(circle at 40% 80%, rgba(212, 184, 150, 0.25) 0%, transparent 28%),
+    radial-gradient(circle at 38% 82%, rgba(212, 184, 150, 0.35) 0%, transparent 25%),
     /* 光斑 4 - 右下微光 */
-    radial-gradient(circle at 85% 82%, rgba(201, 168, 130, 0.22) 0%, transparent 18%),
+    radial-gradient(circle at 88% 85%, rgba(201, 168, 130, 0.32) 0%, transparent 16%),
     /* 光斑 5 - 中心高光 */
-    radial-gradient(circle at 50% 45%, rgba(255, 245, 236, 0.3) 0%, transparent 32%),
+    radial-gradient(circle at 50% 42%, rgba(255, 245, 236, 0.4) 0%, transparent 30%),
     /* 光斑 6 - 左下装饰 */
-    radial-gradient(circle at 20% 75%, rgba(232, 213, 192, 0.18) 0%, transparent 25%),
+    radial-gradient(circle at 18% 78%, rgba(232, 213, 192, 0.28) 0%, transparent 22%),
     /* 光斑 7 - 右上装饰 */
-    radial-gradient(circle at 75% 35%, rgba(201, 168, 130, 0.15) 0%, transparent 22%);
+    radial-gradient(circle at 78% 32%, rgba(201, 168, 130, 0.25) 0%, transparent 20%),
+    /* 光斑 8 - 顶部中央 */
+    radial-gradient(circle at 50% 10%, rgba(255, 248, 240, 0.35) 0%, transparent 25%);
   pointer-events: none;
   z-index: 0;
   animation: heroGlow 12s ease-in-out infinite alternate;
 }
 
-/* Hero 纹理叠加层 */
+/* Hero 纹理叠加层 - 更明显 */
 #page-header.full_page .hero-texture {
   content: "";
   position: absolute;
@@ -131,26 +133,26 @@ body {
     repeating-linear-gradient(
       45deg,
       transparent,
-      transparent 60px,
-      rgba(201, 168, 130, 0.03) 60px,
-      rgba(201, 168, 130, 0.03) 61px
+      transparent 50px,
+      rgba(201, 168, 130, 0.05) 50px,
+      rgba(201, 168, 130, 0.05) 51px
     ),
     repeating-linear-gradient(
       -45deg,
       transparent,
-      transparent 60px,
-      rgba(201, 168, 130, 0.02) 60px,
-      rgba(201, 168, 130, 0.02) 61px
+      transparent 50px,
+      rgba(201, 168, 130, 0.04) 50px,
+      rgba(201, 168, 130, 0.04) 51px
     );
   pointer-events: none;
   z-index: 0;
-  opacity: 0.8;
+  opacity: 1;
 }
 
 @keyframes heroGlow {
-  0% { opacity: 0.9; transform: scale(1) translate(0, 0); }
-  50% { opacity: 1; transform: scale(1.04) translate(15px, -10px); }
-  100% { opacity: 0.95; transform: scale(1.02) translate(-8px, 8px); }
+  0% { opacity: 0.92; transform: scale(1) translate(0, 0); }
+  50% { opacity: 1; transform: scale(1.05) translate(18px, -12px); }
+  100% { opacity: 0.96; transform: scale(1.03) translate(-10px, 10px); }
 }
 
 /* Hero 内容层级 */
