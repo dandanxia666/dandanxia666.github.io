@@ -65,15 +65,15 @@ body {
   overflow: hidden;
   background:
     /* 左侧暖光晕 - 更明显 */
-    radial-gradient(ellipse 65% 85% at 12% 45%, rgba(232, 213, 192, 0.6) 0%, transparent 65%),
+    radial-gradient(ellipse 70% 90% at 10% 45%, rgba(232, 213, 192, 0.7) 0%, transparent 60%),
     /* 右侧柔光 - 更明显 */
-    radial-gradient(ellipse 55% 75% at 88% 35%, rgba(212, 184, 150, 0.45) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 80% at 90% 35%, rgba(212, 184, 150, 0.55) 0%, transparent 55%),
     /* 顶部高光 */
-    radial-gradient(ellipse 85% 35% at 50% 0%, rgba(255, 248, 240, 0.7) 0%, transparent 55%),
+    radial-gradient(ellipse 90% 40% at 50% 0%, rgba(255, 248, 240, 0.8) 0%, transparent 50%),
     /* 底部暖色 */
-    radial-gradient(ellipse 75% 55% at 50% 100%, rgba(201, 168, 130, 0.25) 0%, transparent 55%),
+    radial-gradient(ellipse 80% 60% at 50% 100%, rgba(201, 168, 130, 0.35) 0%, transparent 50%),
     /* 中心微光 */
-    radial-gradient(circle at 50% 50%, rgba(255, 250, 245, 0.4) 0%, transparent 45%),
+    radial-gradient(circle at 50% 50%, rgba(255, 250, 245, 0.5) 0%, transparent 40%),
     /* 基础底色 */
     linear-gradient(170deg, #fdf8f3 0%, #f7f0e6 50%, #f5ede2 100%);
   background-attachment: fixed !important;
@@ -95,30 +95,62 @@ body {
 #page-header.full_page::after {
   content: "";
   position: absolute;
-  top: -15%;
-  left: -10%;
-  right: -10%;
-  bottom: -15%;
+  top: -20%;
+  left: -15%;
+  right: -15%;
+  bottom: -20%;
   background:
     /* 光斑 1 - 左上暖光 */
-    radial-gradient(circle at 18% 30%, rgba(201, 168, 130, 0.25) 0%, transparent 25%),
+    radial-gradient(circle at 15% 25%, rgba(201, 168, 130, 0.35) 0%, transparent 22%),
     /* 光斑 2 - 右上柔光 */
-    radial-gradient(circle at 78% 20%, rgba(232, 213, 192, 0.3) 0%, transparent 22%),
+    radial-gradient(circle at 82% 18%, rgba(232, 213, 192, 0.4) 0%, transparent 20%),
     /* 光斑 3 - 中下暖色 */
-    radial-gradient(circle at 42% 75%, rgba(212, 184, 150, 0.18) 0%, transparent 30%),
+    radial-gradient(circle at 40% 80%, rgba(212, 184, 150, 0.25) 0%, transparent 28%),
     /* 光斑 4 - 右下微光 */
-    radial-gradient(circle at 82% 80%, rgba(201, 168, 130, 0.15) 0%, transparent 20%),
+    radial-gradient(circle at 85% 82%, rgba(201, 168, 130, 0.22) 0%, transparent 18%),
     /* 光斑 5 - 中心高光 */
-    radial-gradient(circle at 50% 45%, rgba(255, 245, 236, 0.2) 0%, transparent 35%);
+    radial-gradient(circle at 50% 45%, rgba(255, 245, 236, 0.3) 0%, transparent 32%),
+    /* 光斑 6 - 左下装饰 */
+    radial-gradient(circle at 20% 75%, rgba(232, 213, 192, 0.18) 0%, transparent 25%),
+    /* 光斑 7 - 右上装饰 */
+    radial-gradient(circle at 75% 35%, rgba(201, 168, 130, 0.15) 0%, transparent 22%);
   pointer-events: none;
   z-index: 0;
   animation: heroGlow 12s ease-in-out infinite alternate;
 }
 
+/* Hero 纹理叠加层 */
+#page-header.full_page .hero-texture {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image:
+    repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 60px,
+      rgba(201, 168, 130, 0.03) 60px,
+      rgba(201, 168, 130, 0.03) 61px
+    ),
+    repeating-linear-gradient(
+      -45deg,
+      transparent,
+      transparent 60px,
+      rgba(201, 168, 130, 0.02) 60px,
+      rgba(201, 168, 130, 0.02) 61px
+    );
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.8;
+}
+
 @keyframes heroGlow {
-  0% { opacity: 0.85; transform: scale(1) translate(0, 0); }
-  50% { opacity: 1; transform: scale(1.03) translate(12px, -8px); }
-  100% { opacity: 0.92; transform: scale(1.015) translate(-6px, 6px); }
+  0% { opacity: 0.9; transform: scale(1) translate(0, 0); }
+  50% { opacity: 1; transform: scale(1.04) translate(15px, -10px); }
+  100% { opacity: 0.95; transform: scale(1.02) translate(-8px, 8px); }
 }
 
 /* Hero 内容层级 */
