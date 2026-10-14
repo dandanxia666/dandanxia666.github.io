@@ -394,6 +394,12 @@ body {
   50% { transform: translateX(-40px); opacity: 0.7; }
 }
 
+/* Hero 内容层级 - 保证文字压在装饰层之上 */
+#page-header.full_page #site-info,
+#page-header.not-top-img #site-info {
+  position: relative;
+  z-index: 1;
+}
 
 /* ========== 导航栏 ========== */
 #page-header {
