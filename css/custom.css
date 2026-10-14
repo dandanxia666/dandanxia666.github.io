@@ -58,15 +58,34 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* ========== 首页 Hero 区域 ========== */
-#home_top {
+/* ========== 首页 Hero 区域 (Butterfly 主题) ========== */
+/* 覆盖蝴蝶主题的 full_page 背景 */
+#page-header.full_page {
   position: relative;
-  padding: 16vh 0 8vh;
   overflow: hidden;
+  /* 用多层渐变覆盖内联的背景图片 */
+  background: 
+    /* 大号柔光球 1 */
+    radial-gradient(circle at 30% 30%, rgba(232, 213, 192, 0.4) 0%, transparent 50%),
+    /* 大号柔光球 2 */
+    radial-gradient(circle at 70% 60%, rgba(212, 184, 150, 0.25) 0%, transparent 45%),
+    /* 小号高光 */
+    radial-gradient(circle at 55% 20%, rgba(255, 245, 236, 0.5) 0%, transparent 35%),
+    /* 微妙的纹理叠加 */
+    repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 80px,
+      rgba(201, 168, 130, 0.02) 80px,
+      rgba(201, 168, 130, 0.02) 81px
+    ),
+    /* 基础渐变 */
+    linear-gradient(180deg, #fdf8f3 0%, #f5f0e8 100%);
+  background-attachment: fixed !important;
 }
 
-/* Hero 背景：多层柔和渐变 + 纹理 */
-#home_top::before {
+/* Hero 装饰层 */
+#page-header.full_page::before {
   content: "";
   position: absolute;
   top: -20%;
@@ -74,71 +93,83 @@ body {
   right: -10%;
   bottom: -20%;
   background:
-    /* 大号柔光球 1 */
-    radial-gradient(circle at 30% 30%, rgba(232, 213, 192, 0.35) 0%, transparent 50%),
-    /* 大号柔光球 2 */
-    radial-gradient(circle at 70% 60%, rgba(212, 184, 150, 0.2) 0%, transparent 45%),
-    /* 小号高光 */
-    radial-gradient(circle at 55% 20%, rgba(255, 245, 236, 0.4) 0%, transparent 35%),
-    /* 微妙的纹理叠加 */
-    repeating-linear-gradient(
-      45deg,
-      transparent,
-      transparent 80px,
-      rgba(201, 168, 130, 0.015) 80px,
-      rgba(201, 168, 130, 0.015) 81px
-    );
+    radial-gradient(circle at 25% 40%, rgba(201, 168, 130, 0.12) 0%, transparent 50%),
+    radial-gradient(circle at 75% 30%, rgba(232, 213, 192, 0.15) 0%, transparent 45%);
   pointer-events: none;
   z-index: 0;
+  animation: heroGlow 10s ease-in-out infinite alternate;
 }
 
-/* 第二个装饰层 */
-#home_top::after {
+#page-header.full_page::after {
   content: "";
   position: absolute;
-  bottom: -10%;
-  left: 10%;
-  width: 40%;
-  height: 60%;
-  background: radial-gradient(ellipse, rgba(201, 168, 130, 0.08) 0%, transparent 70%);
-  filter: blur(40px);
+  bottom: -15%;
+  left: 15%;
+  width: 45%;
+  height: 65%;
+  background: radial-gradient(ellipse, rgba(201, 168, 130, 0.1) 0%, transparent 70%);
+  filter: blur(50px);
   pointer-events: none;
   z-index: 0;
-  animation: heroGlow 8s ease-in-out infinite alternate;
+  animation: heroGlow 12s ease-in-out infinite alternate-reverse;
 }
 
 @keyframes heroGlow {
-  0% { opacity: 0.6; transform: translateX(0); }
-  100% { opacity: 1; transform: translateX(20px); }
+  0% { opacity: 0.7; transform: translateX(0) scale(1); }
+  100% { opacity: 1; transform: translateX(30px) scale(1.05); }
 }
 
 /* Hero 内容层级 */
-#home_top > * {
+#page-header.full_page #site-info {
   position: relative;
   z-index: 1;
 }
 
 /* Hero 标题 */
-#home_top h1 {
+#page-header.full_page #site-title {
   font-family: var(--font-serif);
   font-weight: 700;
-  font-size: 2.4rem;
+  font-size: 3rem;
   background: linear-gradient(135deg, var(--text-primary) 0%, var(--accent) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   margin-bottom: 0.5em;
+  text-shadow: none !important;
 }
 
-/* 副标题 / 简介 */
-#home_top .post-title,
-#home_top h1 + p {
-  color: var(--text-secondary);
-  font-size: 1.1rem;
+/* 副标题 */
+#page-header.full_page #site-subtitle {
+  color: var(--text-secondary) !important;
+  font-size: 1.2rem !important;
   line-height: 1.8;
   max-width: 540px;
   margin: 0 auto;
-  opacity: 0.85;
+  opacity: 0.9;
+  text-shadow: none !important;
+}
+
+/* 社交图标 */
+#page-header.full_page #site_social_icons .social-icon {
+  color: var(--text-secondary) !important;
+  text-shadow: none !important;
+  transition: color 0.3s ease;
+}
+
+#page-header.full_page #site_social_icons .social-icon:hover {
+  color: var(--accent) !important;
+}
+
+/* 向下滚动箭头 */
+#page-header.full_page #scroll-down .scroll-down-effects {
+  color: var(--text-tertiary) !important;
+  text-shadow: none !important;
+  animation: bounce 2s ease-in-out infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(8px); }
 }
 
 /* ========== 导航栏 ========== */
